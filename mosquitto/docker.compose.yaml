@@ -6,6 +6,7 @@ services:
       - ./config:/mosquitto/config
       - ./data:/mosquitto/data
       - ./log:/mosquitto/log
+      #Pamiętaj by dodać foldery!
     ports:
       - 1883:1883
       - 9001:9001
