@@ -1,0 +1,25 @@
+# Use postgres/example user/password credentials
+version: '3.9'
+
+services:
+
+  db:
+    image: timescale/timescaledb-ha:pg17
+    container_name: timescale
+    user: 'root'
+    restart: always
+    # set shared memory limit when using docker-compose
+    # shm_size: 128mb
+    # or set shared memory limit when deploy via swarm stack
+    volumes:
+      - ./data:/home/postgres/pgdata/data
+    #    tmpfs:
+    #      size: 134217728 # 128*2^20 bytes = 128Mb
+    environment:
+      POSTGRES_DB: iot
+      POSTGRES_PASSWORD: admin
+      POSTGRES_USER: admin
+      PGDATA: /home/postgres/pgdata/data
+    ports: 
+      - "25432:5432"
+
