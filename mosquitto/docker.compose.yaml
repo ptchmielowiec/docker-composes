@@ -11,3 +11,6 @@ services:
       - 9001:9001
     stdin_open: true 
     tty: true
+#https://pimylifeup.com/mosquitto-mqtt-docker/
+#docker compose exec mosquitto sh
+#mosquitto_passwd -c /mosquitto/config/pwfile <USERNAME>
